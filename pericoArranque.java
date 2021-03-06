@@ -1,8 +1,8 @@
-import grafica.ventanaPrincipal;
+import grafica.Ventanas.*;
 
 public class pericoArranque {
     public static void main(String[] args) {
-        ventanaPrincipal a = new ventanaPrincipal();
+        VentanaPrincipal a = new VentanaPrincipal();
         a.setVisible(true);
     }
 }

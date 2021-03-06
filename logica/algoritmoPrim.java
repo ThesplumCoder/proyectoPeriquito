@@ -78,13 +78,40 @@ public class algoritmoPrim {
         return temporal;
     }
 
-    public void agregarVerticesRecorridos(){
+    public Double buscadorMenorAristaRecorridos(){
         if(verticesRecorridos.get(0).equals(null)){
             verticesRecorridos.add(0 , lineaMasPequena().obtenerVerticeInicial());
             verticesRecorridos.add(1 , lineaMasPequena().obtenerVerticeFinal());
         }
         else{
-            ArrayList<arista> temporal = new ArrayList<>();
+            Double menor = Double.valueOf(0);
+            for(int i = 0 ; i <= verticesRecorridos.size() ; i++){
+                ArrayList<Double> temporal = new ArrayList<>(magnitudVecinos(verticesRecorridos.get(i)));
+                for(Double magnitud : temporal){
+                    if(magnitud < menor){
+                        menor = Double.valueOf(magnitud.doubleValue());
+                    }
+                }
+            }
+            return menor;
+        }
+        return null;
+    }
+
+    public void marcarPequenaArista(arista menor) {
+        if(verticesRecorridos.contains(menor.obtenerVerticeInicial())){
+            if(verticesRecorridos.contains(menor.obtenerVerticeFinal())){
+                JOptionPane.showMessageDialog(null, "Arista descartada: " + menor.obtenerArista().toString());
+            }
+        }
+        else{
+            if(verticesRecorridos.contains(menor.obtenerVerticeFinal())){
+                this.verticesRecorridos.add(menor.obtenerVerticeFinal());
+            }
+            else{
+                this.verticesRecorridos.add(menor.obtenerVerticeInicial());
+                this.verticesRecorridos.add(menor.obtenerVerticeFinal());
+            }
         }
     }
     //----------FIN DE METODOS EN GENERAL----------

@@ -1,19 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package grafica.Clases;
 
 import java.awt.Graphics;
+import logica.arista;
 
-/**
- *
- * @author Ciru
- */
-public class Enlace {
+public class aristaGrafica extends arista{
     private int x1,y1,x2,y2;
-    public Enlace(int x1, int y1, int x2, int y2) {
+
+    public aristaGrafica(verticeGrafico inicio, verticeGrafico fin){
+        super(inicio , fin);
+    }
+    
+    public aristaGrafica(int x1, int y1, int x2, int y2) {
         this.x1 = x1;
         this.y1 = y1;
         this.x2 = x2;

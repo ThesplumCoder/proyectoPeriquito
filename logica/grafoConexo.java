@@ -89,7 +89,7 @@ public class grafoConexo {
      * @param x Coordenada horizontal del vertice.
      * @param y Coordenada vertical del vertice.
      */
-    public void agregarVertice(double x , double y){
+    public void agregarVertice(int x , int y){
         vertice temporal = new vertice(x , y);
         if(buscarRepetido(temporal) == false){
             this.vertices.add(temporal);
